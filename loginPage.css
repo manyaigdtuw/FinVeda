@@ -4,132 +4,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  width: 300px;
-  position: relative;
-}
-
-.form-container {
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  position: absolute;
-  width: 100%;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#login-form {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-#signup-form {
-  transform: translateX(100%);
-  opacity: 0;
-  visibility: hidden;
-}
-
-input[type="text"], input[type="password"], input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out;
-}
-
-input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover {
-  transform: scale(1.05);
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* Add fade-in and slide-in animation */
-@keyframes fadeInSlide {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.form-container {
-  animation: fadeInSlide 0.8s ease-out;
-}
-
-button.loading {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
-
-/* Transition for switching between forms */
-.visible {
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.hidden {
-  transform: translateX(100%);
-  opacity: 0;
-  visibility: hidden;
-}
-
 
 body,
 input {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .container {
   position: relative;
   width: 100%;
-  background-color: #54c5c9;
+  background: linear-gradient(to right, white, rgb(73, 143, 248));
   min-height: 100vh;
   overflow: hidden;
+  transition: background 0.5s ease; 
 }
 
+.container.sign-up-mode {
+  background: linear-gradient(to right, rgb(73, 143, 248), white);
+}
 .forms-container {
   position: absolute;
   width: 100%;
@@ -138,7 +32,7 @@ input {
   left: 0;
 }
 
-.sign-in-signup {
+.signin-signup {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -155,7 +49,7 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding:  5rem;
+  padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
@@ -173,7 +67,7 @@ form.sign-in-form {
 
 .title {
   font-size: 2.2rem;
-  color: #444;
+  color:white;
   margin-bottom: 10px;
 }
 
@@ -185,7 +79,7 @@ form.sign-in-form {
   height: 55px;
   border-radius: 55px;
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
 }
@@ -193,7 +87,8 @@ form.sign-in-form {
 .input-field i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: #4d84e2;
+  padding: 10px;
   transition: 0.5s;
   font-size: 1.1rem;
 }
@@ -209,70 +104,67 @@ form.sign-in-form {
 }
 
 .input-field input::placeholder {
-  color: #aaa;
+  color:#4d84e2;
   font-weight: 500;
-}
-
-.password-toggle {
-  cursor: pointer;
 }
 
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
-  text-align: center;
+  color: white;
 }
 
 .social-media {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.social-icon-frame {
+  display: inline-flex; 
   justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 50%; 
+  padding: 15px; 
+  margin: 5px; 
+  background-color: transparent; 
+  width: 45px; 
+  height: 45px; 
+  transition: transform 0.3s; 
+}
+
+.social-icon-frame:hover {
+  transform: scale(1.05); 
 }
 
 .social-icon {
-  height: 46px;
-  width: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0.45rem;
-  color: rgb(204, 195, 195);
-  background-color: #2b2b2b;
-  border-radius: 50%;
-  border: 1px solid #282828;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: 0.3s;
-  cursor: pointer;
+  font-size: 22px; 
+  color: blue; 
+  transition: none; 
 }
 
-#github:hover {
-  color: white ;
-  border-color: white;
-  background-color: black;
-}
-#google:hover {
-  color:  #EA4335;
-  background-color: black;
-  border-color: white;
-}
 
 .btn {
   width: 150px;
-  background-color: #000000;
+  background-color: white;
   border: none;
   outline: none;
   height: 49px;
   border-radius: 49px;
-  color: #fff;
+  color:#1e90ff;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 900;
+  font-size: medium;
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
 }
 
 .btn:hover {
-  background-color: #161618;
+  background-color: #1e90ff;
+  color: white;
 }
 
 .panels-container {
@@ -293,7 +185,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #000000 0%, #000000 100%);
+  background: linear-gradient(-45deg, #68acf0 0%, blue 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -308,7 +200,6 @@ form.sign-in-form {
 .panel {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: space-around;
   text-align: center;
   z-index: 6;
@@ -316,7 +207,7 @@ form.sign-in-form {
 
 .left-panel {
   pointer-events: all;
-  padding: 3rem 17% 2rem 12%;
+  padding: 4rem 17% 2rem 12%;
 }
 
 .right-panel {
@@ -343,7 +234,6 @@ form.sign-in-form {
 
 .btn.transparent {
   margin: 0;
-  background: none;
   border: 2px solid #fff;
   width: 130px;
   height: 41px;
@@ -356,6 +246,8 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
+/* ANIMATION */
+
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
@@ -366,7 +258,7 @@ form.sign-in-form {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .sign-in-signup {
+.container.sign-up-mode .signin-signup {
   left: 25%;
 }
 
@@ -393,58 +285,21 @@ form.sign-in-form {
   pointer-events: all;
 }
 
-.homeBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #ffffff;
-  color: #000000;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.homeBtn:hover {
-  background: #000000;
-  color: #ffffff;
-}
-
-.password-strength {
-  display: flex;
-  margin-top: 5px;
-  height: 5px;
-  width: 200px;
-}
-
-.password-strength div {
-  height: 100%;
-  width: 33.33%;
-  margin-right: 3px;
-  background-color: #ddd;
-  transition: background-color 0.3s;
-}
-
-.password-strength .weak { background-color: #ff4757; }
-.password-strength .medium { background-color: #ffa502; }
-.password-strength .strong { background-color: #23ad5c; }
-
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
     height: 100vh;
   }
-  .sign-in-signup {
+
+  .signin-signup {
     width: 100%;
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
   }
 
-  .sign-in-signup,
-  .container.sign-up-mode .sign-in-signup {
+  .signin-signup,
+  .container.sign-up-mode .signin-signup {
     left: 50%;
   }
 
@@ -528,13 +383,13 @@ form.sign-in-form {
     transform: translateY(300px);
   }
 
-  .container.sign-up-mode .sign-in-signup {
+  .container.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
   }
 }
 
-@media  (max-width: 570px) {
+@media (max-width: 570px) {
   form {
     padding: 0 1.5rem;
   }
@@ -542,9 +397,11 @@ form.sign-in-form {
   .image {
     display: none;
   }
+
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .container {
     padding: 1.5rem;
   }
@@ -565,7 +422,7 @@ form.sign-in-form {
   top: 20px;
   left: 20px;
   background: #ffffff;
-  color: #000000;
+  color:#1e90ff;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -574,10 +431,119 @@ form.sign-in-form {
 }
 
 .homeBtn:hover {
-  background: #232323;
+  background: #1e90ff;
+}
+
+.homeBtn:hover i {
+  color: white;
 }
 
 .homeBtn:active {
-  background: #191919;
+  background: blue;
 }
 
+.circle {
+  height: 35px;
+  width: 35px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+}
+
+
+.forgot-password {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.forgot-password a {
+  color: white;
+  text-decoration: underline;
+  transition: color 0.3s;
+
+}
+.btn-transparent{
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: medium;
+  font-weight: 900;
+ background-color: white;
+ color: #4d84e2;
+}
+.btn-transparent:hover{
+  background-color: #1e90ff;
+  color: white;
+}
+.forgot-password a:hover {
+  color: blue;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.input-field input {
+  
+  padding: 10px;
+  flex-grow: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:hover {
+  transform: scale(1.05);
+}
+
+/* .input-field input:focus {
+
+  outline: 
+  none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+
+} */
+
+.btn {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.social-icons a {
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+.form-check {
+  align-items: left;
+  color: #fff; 
+}
+
+.form-check-input {
+  /* margin-right: 5px;  */
+  width: 15px;
+  height: 15px;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 5px; 
+  gap: 6rem;
+}

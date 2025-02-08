@@ -40,7 +40,6 @@
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
 }
 html {
   font-family: sans-serif;
@@ -1107,9 +1106,7 @@ pre code {
   .offset-md-2 {
     margin-left: 16.666667%;
   }
-  .offset-md-3 {
-    margin-left: 25%;
-  }
+  
   .offset-md-4 {
     margin-left: 33.333333%;
   }

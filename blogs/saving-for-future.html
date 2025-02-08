@@ -6,7 +6,7 @@
   <title>Saving For Future - FinVeda</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../assets/images/Favicon1.ico" type="image/png" />
+  <link rel="shortcut icon" href="/assets/images/favicon2.webp" type="image/png" />
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
   <link rel="stylesheet" href="../assets/css/slick.css" />
@@ -16,9 +16,11 @@
   <link rel="stylesheet" href="../assets/css/default.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/popup.css" />
+  <!-- Linked CSS for social logos -->
+  <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+
+  <link rel="stylesheet" href="new.css">  <style>
     .circle {
       position: absolute;
       width: 25px;
@@ -44,7 +46,7 @@
         display: none;
       }
     }
-    
+
     #progressBar {
         position: fixed;
         top: 0;
@@ -72,6 +74,96 @@ body {
 }
 
   </style>
+
+<style>
+  article {
+    max-width: 800px; /* Maintain consistent width for readability */
+    margin: 20px auto; /* Center the article with spacing */
+    padding: 30px; /* Generous padding for a clean layout */
+    background: #ffffff; /* White background for clarity */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+article:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+h2 {
+    font-size: 26px; /* Larger heading for main title */
+    color: #007bff; /* Blue color for headings */
+    margin: 20px 0; /* Margin for spacing */
+    border-bottom: 2px solid #eaeaea; /* Underline effect for emphasis */
+    padding-bottom: 10px; /* Padding for space under the heading */
+}
+
+p {
+    margin-bottom: 20px; /* Consistent spacing */
+    line-height: 1.7; /* Improved readability */
+    font-size: 16px; /* Standard font size */
+    color: #333; /* Darker text color for contrast */
+}
+
+b {
+    color: #007bff; /* Highlighted text in blue */
+}
+
+ol {
+    margin-left: 20px; /* Indentation for ordered list */
+    margin-bottom: 20px; /* Spacing below the list */
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee; /* Horizontal rule for separation */
+    margin: 30px 0; /* Spacing around horizontal rules */
+}
+
+blockquote {
+    border-left: 4px solid #007bff; /* Distinct left border for quotes */
+    padding: 15px 20px; /* Padding for quotes */
+    background: #f9f9f9; /* Light background for quotes */
+    margin: 25px 0; /* Separation from other elements */
+    font-style: italic; /* Italics for quotes */
+    color: #555; /* Slightly lighter text color */
+    font-size: 1.1em; /* Slightly larger font for emphasis */
+}
+
+button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 20px; /* Button padding */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners for button */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+    font-size: 16px; /* Consistent button text size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Enlarge on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    article {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+
+    p {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+}
+
+</style>
+
 </head>
 
 <body>
@@ -339,7 +431,7 @@ body {
               </div>
             </nav>
 
-                
+
               <link href="../navbar.css" rel="stylesheet">
               <script type="text/javascript" src="../navbar.js"></script>
           </div>
@@ -405,14 +497,14 @@ body {
       /* Adjust this value to increase or decrease the margins */
     }
   </style>
-  
+
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
       <span class="closenotif" id="closeSuccessNotification">✖</span>
       <div class="timerline" id="timerline"></div>
     </button>
-    
+
   <footer id="footer" class="footer-area pt-120">
     <div class="container">
       <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -427,7 +519,7 @@ body {
           <div class="col-lg-6">
             <div class="subscribe-form mt-50">
               <form id="subscribe-form">
-                <input type="email" id="news-email" placeholder="Enter Email" required/>          
+                <input type="email" id="news-email" placeholder="Enter Email" required/>
                 <button class="main-btn" id="subscribe-btn" type="submit">Subscribe</button>
               </form>
             </div>
@@ -510,22 +602,22 @@ body {
                             <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E4405F;" aria-label="Instagram">
                               <i style="font-size: 25px" class="fa-brands fa-instagram"></i>
                             </a>
-                        
+
                             <!-- Facebook Icon -->
                             <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #4267B2;" aria-label="Facebook">
                               <i style="font-size: 25px" class="fa-brands fa-facebook"></i>
                             </a>
-                        
+
                             <!-- X/Twitter Icon -->
                             <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #1DA1F2;" aria-label="Twitter">
                               <i style="font-size: 25px" class="fa-brands fa-x-twitter"></i>
                             </a>
-                        
+
                             <!-- Discord Icon -->
                             <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #7289DA;" aria-label="Discord">
                               <i style="font-size: 25px" class="fa-brands fa-discord"></i>
                             </a>
-                        
+
                             <!-- GitHub Icon -->
                             <a href="https://github.com" target="_blank" style="margin: 0 10px; color: #333;" aria-label="GitHub">
                               <i style="font-size: 25px" class="fa-brands fa-github"></i>

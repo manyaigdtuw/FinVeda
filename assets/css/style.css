@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
 
+* {
+ margin: 0px;
+ padding: 0px;
+
+}
 :root {
   --bg-color-light: #ffffff;
   --text-color-light: #000000;
@@ -23,6 +28,54 @@ body {
   transition: background-color 0.3s, color 0.3s;
 
 }
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  list-style: none;
+  padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+/* Arrow Icon */
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow Rotation when Active */
+.dropdown.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Show Dropdown on Click */
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
 .theme-toggle {
   position: fixed;
   top: 10px;
@@ -36,19 +89,37 @@ body {
   font-size: 20px;
 }
 
-body.dark-mode {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
+.theme-toggle2 {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
 }
+body.dark-mode {
+  background-color: #121212 !important; /* Use !important as a last resort */
+  color: #ffffff !important;
+}
+
 
 .theme-toggle.dark {
   background-color: #eceae0;
   color: #000;
 }
- 
+
+.theme-toggle2.dark {
+  background-color: #eceae0;
+  color: #000;
+}
+
 .btn-text{
 
-  margin-left:  35px;
+  
   color:  white;
 
 }
@@ -69,13 +140,12 @@ body.dark-mode {
  
 
 
-.icon1 img{
+/* .icon1 img{
 
   height: 6vh;
-  background-color: transparent;
   width: 9vw;
 
-}
+} */
 
 .toggle-password-btn {
 
@@ -154,15 +224,20 @@ h6 {
   color: #2e2e2e;
   margin: 0px;
 }
-
+ 
 h1 {
-  font-size: 48px;
-}
 
-h2 {
   font-size: 36px;
-}
+  color: #ffffff;
 
+}
+ 
+h2 {
+
+  font-size: 22px;
+
+}
+ 
 h3 {
   font-size: 28px;
 }
@@ -185,15 +260,17 @@ ol {
   padding: 0px;
   list-style-type: none;
 }
+ 
+/*p {
 
-p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #6a6972;
-  margin: 0px;
-}
+  font-size:  18px;
+  font-weight:  400;
+  line-height:  26px;
+  color:  #ffffff;
+  margin:  0px;
 
+}*/
+ 
 .bg_cover {
   background-position: center center;
   background-size: cover;
@@ -240,6 +317,16 @@ p {
   background-size: 200%;
 
   text-decoration: none;
+}
+
+p {
+
+  font-size:  18px;
+  font-weight:  400;
+  line-height:  26px;
+  color:  #0029ff;
+  margin:  0px;
+
 }
 
 .main-btn:hover {
@@ -744,12 +831,12 @@ p {
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
 }
-.navbar-nav {main
+.navbar-nav main{
  background-color: saddlebrown;
   list-style-type: none;
   margin: 0 1rem;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .nav-item {
@@ -1151,7 +1238,14 @@ p {
 }
 
 .sticky .navbar-nav .nav-item a {
-  color: #2e2e2e;
+  margin-top: -20px;
+
+}
+
+.header-hero {
+  position: relative;
+  z-index: 5;
+  background-position: bottom center;
 }
 
 .sticky .navbar-nav .nav-item:hover>a {
@@ -1241,7 +1335,7 @@ p {
 }
 
 .header-hero-content .text {
-  color: #fff;
+  color: #090909;
   margin-top: 30px;
 }
 
@@ -1820,6 +1914,12 @@ p {
   bottom: 25px;
 }
 
+.single-team .team-content .holder-name a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #635adc;
+}
+
 .single-team .team-image .social ul {
   background-color: rgba(255, 255, 255, 0.23);
   display: inline-block;
@@ -1863,11 +1963,11 @@ p {
   padding: 30px;
 }
 
-.single-team .team-content .holder-name a {
+/*.single-team .team-content .holder-name a {
   font-size: 20px;
   font-weight: 700;
   color: #2e2e2e;
-}
+}*/
 
 .single-team .team-content .text {
   margin-top: 5px;
@@ -1981,6 +2081,7 @@ p {
   color: #fe7a7b;
 }
 
+
 .testimonial-active .slick-dots {
   margin: 0 auto;
 }
@@ -2014,6 +2115,7 @@ p {
 
 .blog{
   width: 90vw;
+  
 }
 .single-blog {
   transition: transform 0.5s ease;
@@ -2021,7 +2123,8 @@ p {
   box-shadow: 0 4px 8px rgb(51, 55, 55);
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(135deg,#18a5a7,#d9ecc7);
+   
+  background: linear-gradient(135deg,#234eeb,#5b86eb);
 }
 .blog-content {
   text-align: left;
@@ -2032,19 +2135,35 @@ p {
   border-radius: 8px;
   position: relative;
 }
+  
 .blogfull{
   text-align: left;
   margin-left: auto;
   margin-right: auto;
   max-width: 80%;
   padding: 20px;
+  padding-top: 30px ;
   border-radius: 8px;
   position: relative;
 }
+
+@media (max-width: 600px) {
+  #article{
+    width: 100vw;
+  }
+  .section-title{
+    padding: 0;
+  }
+  .single-blog .blog-content a .more {
+    margin-top: 30px;
+     
+  }
+}
+
 .single-blog:hover {
   transform: scale(0.95);
   cursor: pointer;
-  background: linear-gradient(110deg,#18a5a7,#d9ecc7);
+  background: linear-gradient(110deg,#234eeb,#3a68e4);
 }
 .blog-content .reviewtext{
   color: black;
@@ -2073,6 +2192,7 @@ p {
   overflow: hidden;
   border-radius: 10px;
   height: 165px;
+  width: 200px;
   box-shadow: 0 2px 4px rgba(9, 11, 10, 0.7);
 }
 .single-blog .blog-content .more {
@@ -2096,6 +2216,7 @@ p {
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .col-lg-4, .col-md-7, .col-md-5 {
@@ -2159,7 +2280,7 @@ p {
 .subscribe-content .subscribe-title {
   font-size: 35px;
   font-weight: 600;
-  color: white;
+  /* color: white; */
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -2170,7 +2291,7 @@ p {
 
 @media (max-width: 767px) {
   .subscribe-content .subscribe-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -2187,8 +2308,11 @@ p {
   height: 65px;
   padding: 0 30px;
   border-radius: 5px;
-  width: 60%;
+  width: 100%;
   color: #2e2e2e;
+  margin-top: 20px;
+  
+
 }
 
 .subscribe-form input::placeholder {
@@ -2223,11 +2347,14 @@ p {
 
 .subscribe-form button {
   position: absolute;
+  display: flex;
+  justify-content: center;
   top: 0;
+  margin-top: 20px;
   right: 0;
   border-radius: 8px;
   height: 65px;
-  width: 150px;
+  width: 175px;
   color: white;
   border: none;
   line-height: 65px;
@@ -2251,8 +2378,10 @@ p {
 @media (max-width: 767px) {
   .subscribe-form button {
     position: relative;
-    width: 100%;
-    margin-top: 20px;
+    width:100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 13px;
     border-radius: 8px;
   }
 }
@@ -2260,7 +2389,9 @@ p {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .subscribe-form button {
     position: absolute;
-    width: auto;
+    width:100px;
+    padding-left: 13px;
+    height: 50px;
     margin-top: 0;
     border-radius: 8px;
   }
@@ -2275,6 +2406,7 @@ p {
   background-position: top center;
   position: relative;
   z-index: 5;
+  background-color: transparent;
 }
 
 .footer-area::before {
@@ -2311,12 +2443,15 @@ p {
 
 .footer-about .logo img {
   width: 160px;
+  padding-top: 100px;
 }
 
 .footer-about .text {
   color: #fff;
   line-height: 30px;
   margin-top: 30px;
+  /* Alligned FinVeda description to the left */
+  text-align: left;
 }
 
 .footer-about .social {
@@ -2760,7 +2895,7 @@ h3.footer-title.custom-margin :hover{
   color: #021776;
   font-weight: 600;
   margin-bottom: 12px;
-  font-size: 26px;
+  font-size: 16px;
 }
 
 .popup-content p {
@@ -2843,15 +2978,24 @@ text-align: center;
   margin-top: 20px;
 }
 
-.form-section {
-  width: 40%;
+.form-section { 
+  width: 50rem;
+  height: 60rem;
   display: flex;
   margin: auto;
   animation: fadeIn 1s ease-in-out;
   border-radius: 20px;
+  align-items: center;
   background: linear-gradient(105deg, #00bfff,#150e4e);
   transform: scale(0.8);
   transition: all 0.3s ease;
+}
+
+.form-group p{
+  color: white;
+  font-size: 17px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .form-section:hover{
@@ -2972,6 +3116,21 @@ text-align: center;
   .form-section {
     width: 100%;
     padding: 20px;
+  }
+
+  .form-section h2{
+    padding-top: 30px;
+  }
+
+ #form-group2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form-group2 .form-button{
+    margin-left: 0%;
+    margin-top: 15px;
   }
 
   .form-info-section {
@@ -3151,4 +3310,158 @@ text-align: center;
   z-index: 1000;
   height: 290px;
   width: 290px;
+}
+
+/* Consistent link styling */
+.navbar-nav .page-scroll {
+  color: rgb(237, 242, 244);
+  text-decoration: none;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: color 0.3s,border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* Transparent by default */
+}
+
+/* Hover Effect */
+.navbar-nav .page-scroll:hover {
+  color: #ffcc00; /* Example: Yellow on hover */
+    }
+/* Explore Dropdown: Same styling as other links */
+.nav-item.dropdown > a {
+  color: rgb(237, 242, 244);
+  padding: 8px 12px;
+  display: inline-block;
+  border-bottom: 2px solid transparent; /* Prevent visible underline */
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 20;
+  min-width: 150px;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Links */
+.dropdown-menu li {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 5px 10px;
+transition: background-color 0.3s;
+}
+
+/* Arrow Rotation Effect */
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover .arrow {
+  transform: rotate(180deg);
+} 
+
+.dropdown-toggle::after{
+  border-right: 0;
+  border-left: 0;
+  
+}
+.nav-item a::after {
+  height: -1px;
+}
+.dropdown-toggle::after {
+  border-top: 1px;
+}
+
+/* Code contributed by gjrahul1 */
+
+/* Styles specifically for iPad Mini */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  #testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #testimonial .container {
+    width: 100%;
+    max-width: 50%; /* Adjust as needed */
+  }
+
+  #testimonial .row {
+    justify-content: center;
+  }
+
+  #testimonial .testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #testimonial .testimonial-item {
+    width: 100%;
+    max-width: 600px; /* Adjust based on your design */
+    margin: 10px auto 50px; /* Center each testimonial and add bottom margin */
+  }
+}
+
+
+.services-list-item {
+  color: #333; /* Dark color for light mode */
+}
+
+
+.dark-mode .services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.services-list-item {
+  color: #f0f0f0; /* Light color for dark mode */
+}
+.dark-mode .services-content,
+.dark-mode .single-services {
+  color: #f0f0f0; /* Light color for dark mode */
+  background-color: #333; /* Dark background for dark mode */
+}
+/* Dark mode styles */
+.dark-mode .services-content .services-title a,
+.dark-mode .services-content .services-description,
+.dark-mode .services-content .services-list-item {
+  color: #ffffff; /* White color for dark mode */
+}
+
+
+.dark-mode .single-services {
+  background-color: #333333; /* Dark background for the service box */
+}
+
+
+.dark-mode .services-content .more {
+  color: #ffffff; /* White color for the link */
+}
+
+
+.dark-mode .services-icon i {
+  color: #ffffff; /* White color for the icon */
 }
